@@ -517,8 +517,8 @@ details.sources[open] .src-label::before { content: "−"; }
   // viewBox を変えるだけで全身／顔アップを切り替えます
   var ROBOT_BODY =
     // 影になる浮遊リング・噴射光
-    '<ellipse cx="120" cy="290" rx="44" ry="5" class="rb-ring" opacity=".9"/>' +
-    '<ellipse cx="120" cy="281" rx="34" ry="4" class="rb-thrust"/>' +
+    '<ellipse cx="120" cy="278" rx="33" ry="4" class="rb-ring" opacity=".9"/>' +
+    '<ellipse cx="120" cy="271" rx="26" ry="3.5" class="rb-thrust"/>' +
     // 左腕（下ろしている）
     '<g class="rb-arm-l">' +
       '<path d="M152 182 Q166 188 168 200" class="rb-limb-o"/><path d="M152 182 Q166 188 168 200" class="rb-limb"/>' +
@@ -535,18 +535,15 @@ details.sources[open] .src-label::before { content: "−"; }
     '<path d="M84 214 h72 v20 h-72z" class="rb-suit"/>' +
     '<path d="M84 190 q7 -2 12 2 v22 h-12z M156 190 q-7 -2 -12 2 v22 h12z" class="rb-suit"/>' +
     '<rect x="101" y="166" width="38" height="10" rx="5" class="rb-suit"/>' +
-    // 胸の赤い歯車
-    '<g class="rb-gear">' +
-      '<path d="M120.0 186.0 L122.3 186.2 L123.4 189.7 L125.0 190.5 L128.5 189.5 L130.0 191.3 L128.3 194.6 L128.8 196.2 L132.0 198.0 L131.8 200.3 L128.3 201.4 L127.5 203.0 L128.5 206.5 L126.7 208.0 L123.4 206.3 L121.8 206.8 L120.0 210.0 L117.7 209.8 L116.6 206.3 L115.0 205.5 L111.5 206.5 L110.0 204.7 L111.7 201.4 L111.2 199.8 L108.0 198.0 L108.2 195.7 L111.7 194.6 L112.5 193.0 L111.5 189.5 L113.3 188.0 L116.6 189.7 L118.2 189.2Z" class="rb-red"/>' +
-      '<circle cx="120" cy="198" r="4" fill="#fff"/>' +
-    '</g>' +
-    // ホバークラフト（下半身）
+    // ホバークラフト（下半身）：上端を胴体に合わせたまま 75% に縮小
+    '<g transform="translate(120 228) scale(.75) translate(-120 -228)">' +
     '<rect x="70" y="226" width="100" height="14" rx="7" class="rb-craft-top"/>' +
     '<path d="M54 252 Q54 236 74 236 H166 Q186 236 186 252 V260 Q186 278 162 279 H78 Q54 278 54 260Z" class="rb-craft"/>' +
     '<path d="M64 247 H176" stroke="#fff" stroke-opacity=".18" stroke-width="3" stroke-linecap="round"/>' +
     '<g class="rb-lights">' +
       '<ellipse cx="96" cy="261" rx="10" ry="6.5" class="rb-yellow"/><ellipse cx="144" cy="261" rx="10" ry="6.5" class="rb-yellow"/>' +
       '<ellipse cx="93" cy="259" rx="3.5" ry="2" fill="#fff" opacity=".85"/><ellipse cx="141" cy="259" rx="3.5" ry="2" fill="#fff" opacity=".85"/>' +
+    '</g>' +
     '</g>';
   var ROBOT_HEAD =
     // ヘッドホン状の耳パーツ
